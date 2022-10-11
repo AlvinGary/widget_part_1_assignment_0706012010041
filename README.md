@@ -1,7 +1,8 @@
 # widget_part_1_assignment_0706012010041
 
 ## Mission 1
-### Home Page
+-Home Page
 
 ## Mission 2
-### Navigation and Form Page
+- Navigation
+- Form
