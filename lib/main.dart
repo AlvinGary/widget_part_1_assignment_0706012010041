@@ -13,7 +13,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: DetailsPage(),
+      initialRoute: "/",
+      routes: {
+        "/": (context) => const DetailsPage(),
+        Booking.routeName: (context) => const Booking(),
+      },
     );
   }
 }

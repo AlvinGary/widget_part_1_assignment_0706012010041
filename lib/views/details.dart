@@ -2,6 +2,7 @@ part of 'pages.dart';
 
 class DetailsPage extends StatefulWidget {
   const DetailsPage({super.key});
+  static const String routeName = "/";
 
   @override
   State<DetailsPage> createState() => _DetailsPageState();
@@ -143,63 +144,82 @@ class _DetailsPageState extends State<DetailsPage> {
             ),
             Flexible(
               flex: 4,
-              child: ListView(
-                scrollDirection: Axis.vertical,
+              child: Stack(
                 children: [
-                  Text(
-                    "Welcome to Golden Tulip Holland Batu",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: Colors.white),
-                    textAlign: TextAlign.center,
+                  ListView(
+                    scrollDirection: Axis.vertical,
+                    children: [
+                      Text(
+                        "Welcome to Golden Tulip Holland Batu",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Colors.white),
+                        textAlign: TextAlign.center,
+                      ),
+                      Container(
+                        child: Column(
+                          children: [
+                            Container(
+                              margin: EdgeInsets.all(8),
+                              child: Text(
+                                "Golden Tulip Holland Resort Batu is conveniently located in the popular Batu area. The hotel offers guests a range of services and amenities designed to provide comfort and convenience.",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 16,
+                                    color: Colors.white),
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.all(8),
+                              child: Text(
+                                "24-hour room service, 24-hour security, chapel, daily housekeeping, free Wi-Fi in all rooms are just some of the facilities on offer. Bathroom phone, towels, smoke detector, internet access – wireless, non smoking rooms can be found in selected guestrooms.",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 16,
+                                    color: Colors.white),
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.all(8),
+                              child: Text(
+                                "Recuperate from a full day of sightseeing in the comfort of your room or take advantage of the hotel's recreational facilities, including fitness center, children's playground, pool (kids). For reliable service and professional staff, Golden Tulip Holland Resort Batu caters to your needs.",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 16,
+                                    color: Colors.white),
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.all(8),
+                              child: Text(
+                                "Jalan Cherry No.10, Panderman Hills , Malang, 65314, Indonesia",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 16,
+                                    color: Colors.white),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                   Container(
-                    child: Column(
-                      children: [
-                        Container(
-                          margin: EdgeInsets.all(8),
-                          child: Text(
-                            "Golden Tulip Holland Resort Batu is conveniently located in the popular Batu area. The hotel offers guests a range of services and amenities designed to provide comfort and convenience.",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 16,
-                                color: Colors.white),
+                      margin: EdgeInsets.all(10),
+                      child: Align(
+                        alignment: Alignment.bottomRight,
+                        child: ElevatedButton(
+                          child: Text("Book Now"),
+                          onPressed: () {
+                            Navigator.pushNamed(context, Booking.routeName);
+                          },
+                          style: ElevatedButton.styleFrom(
+                            fixedSize: Size(100, 50),
+                            backgroundColor: Colors.orange,
                           ),
                         ),
-                        Container(
-                          margin: EdgeInsets.all(8),
-                          child: Text(
-                            "24-hour room service, 24-hour security, chapel, daily housekeeping, free Wi-Fi in all rooms are just some of the facilities on offer. Bathroom phone, towels, smoke detector, internet access – wireless, non smoking rooms can be found in selected guestrooms.",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 16,
-                                color: Colors.white),
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.all(8),
-                          child: Text(
-                            "Recuperate from a full day of sightseeing in the comfort of your room or take advantage of the hotel's recreational facilities, including fitness center, children's playground, pool (kids). For reliable service and professional staff, Golden Tulip Holland Resort Batu caters to your needs.",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 16,
-                                color: Colors.white),
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.all(8),
-                          child: Text(
-                            "Jalan Cherry No.10, Panderman Hills , Malang, 65314, Indonesia",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 16,
-                                color: Colors.white),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                      )),
                 ],
               ),
             ),
